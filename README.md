@@ -15,6 +15,7 @@
 3. Write a method that prints out the word frequency count on the screen:
     * Ordered by decreased frequency, meaning the highest frequency words go first.
     * Use any of the following formats for the output:
+    
     <token>\t<freq>
     <token> <freq>
     <token> - <freq>
