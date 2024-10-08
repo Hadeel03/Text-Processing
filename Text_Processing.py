@@ -2,6 +2,7 @@ import sys
 import os # For some error checks 
 
 def tokenize(file_name): # creating a tokenizer from scratch
+    token_frequency = {} # A dictionary to record the frequency of each token
     try:
         with open(file_name, 'r', encoding = 'utf-8') as file: # Opening the file in read mode
                  #Token logic goes here                                     # Using utf-8 encoding
@@ -18,4 +19,6 @@ def main():
     
     file_name = sys.argv[1] # This is assigns the variable file_name to the
                             # first command line arguement 
+    
+
     
