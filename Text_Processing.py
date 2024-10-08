@@ -9,18 +9,20 @@ def tokenize(file_name): # creating a tokenizer from scratch
         with open(file_name, 'r', encoding = 'utf-8') as file: # Opening the file in read mode Using utf-8 encoding
                 while True:
                     char = file.read(1) # This reads the file character by character
-                    if char.isalnum(): # Checks if the character is alphanum, until it returns false (Token is created)
-                         current_token.append(char)
-                    else:
+                    if not char:
                         if current_token: # Checks that the list is not empty
                             current_token = "".join(current_token).lower() # This lines joins the string & normalize the string
-                    if not char:
-                         break
+                            break
+                    if char.isalnum(): # Checks if the character is a letter or a number
+                        current_token.append(char) # If true, then append it to the token list 
+                    else:
+                        pass
+
     except FileNotFoundError: # I used this site https://docs.python.org/3/library/exceptions.html
         print("File doesn't exist")
 
 
-    return
+    return token_frequency
 
 def main():
     if len(sys.argv) < 2: #Checks the number of command line arguments
