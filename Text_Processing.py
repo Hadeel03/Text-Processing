@@ -31,7 +31,11 @@ def tokenize(file_name): # creating a tokenizer from scratch
 
 def computeWordFrequencies(tokens):
     token_frequency = {} # A dictionry to store token count
-    
+    for token in tokens: # Iterate over the list of tokens
+        if token in token_frequency: # Checks if the token is in the token dic
+
+
+
     
 
 def main():
