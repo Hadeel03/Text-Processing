@@ -29,17 +29,6 @@ def tokenize(file_name): # creating a tokenizer from scratch
 
     return token_frequency
 
-def computeWordFrequencies(tokens):
-    token_frequency = {} # A dictionry to store token count
-    for token in tokens: # Iterate over the list of tokens
-        if token in token_frequency: # Checks if the token is in the token dic
-            token_frequency[token] += 1 # Increment if a token is found in the dic
-        else:
-            token_frequency[token] = 1 # Initialize the token with a count of 1
-    return token_frequency
-
-    
-
 def main():
     if len(sys.argv) < 2: #Checks the number of command line arguments
         print("The command line argument should be: python Text_Processing.py <filename>" )
@@ -47,6 +36,7 @@ def main():
     
     file_name = sys.argv[1] # This is assigns the variable file_name to the
                             # first command line arguement 
-    
-
-    
+    tokens = tokenize(file_name) # Calling the tokenize function 
+    #freq = computeWordFrequencies(tokens) # After tokenizing, computing the frequency for each token
+    for token, count in sorted(tokens.items(), key=lambda x: x[1], reverse=True): # I used this https://docs.python.org/3/howto/sorting.html for examples
+        print(f"{token} -> {count}") 
