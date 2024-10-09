@@ -33,8 +33,10 @@ def computeWordFrequencies(tokens):
     token_frequency = {} # A dictionry to store token count
     for token in tokens: # Iterate over the list of tokens
         if token in token_frequency: # Checks if the token is in the token dic
-
-
+            token_frequency[token] += 1 # Increment if a token is found in the dic
+        else:
+            token_frequency[token] = 1 # Initialize the token with a count of 1
+    return token_frequency
 
     
 
