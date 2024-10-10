@@ -14,7 +14,7 @@ def tokenize(file_name): # creating a tokenizer from scratch
                             token = "".join(current_token).lower() # This lines joins the string & normalize the string
                             token_frequency[token] = token_frequency.get(token, 0) + 1# In order to use the get() for dictionary I used https://docs.python.org/3/library/stdtypes.html#dict.get
                             current_token = [] 
-                            break
+                        break  
                     if char.isalnum(): # Checks if the character is a letter or a number
                         current_token.append(char) # If true, then append it to the token list 
                     else:
@@ -40,3 +40,5 @@ def main():
     #freq = computeWordFrequencies(tokens) # After tokenizing, computing the frequency for each token
     for token, count in sorted(tokens.items(), key=lambda x: x[1], reverse=True): # I used this https://docs.python.org/3/howto/sorting.html for examples
         print(f"{token} -> {count}") 
+if __name__ == "__main__":
+    main()
